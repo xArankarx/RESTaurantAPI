@@ -1,0 +1,10 @@
+@startuml
+class AuthorizationController {
+    + AuthorizationController(authorizationService:AuthorizationService)
+    + <<async>> Register(request:RegistrationRequest) : Task<IActionResult>
+    + <<async>> Login(request:LoginRequest) : Task<IActionResult>
+    + <<async>> GetUser() : Task<IActionResult>
+}
+ControllerBase <|-- AuthorizationController
+AuthorizationController --> "_authorizationService" AuthorizationService
+@enduml

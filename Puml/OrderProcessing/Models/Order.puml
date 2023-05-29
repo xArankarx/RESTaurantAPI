@@ -1,0 +1,13 @@
+@startuml
+class Order <<record>> {
+    + Id : int <<get>> <<set>>
+    + UserId : int <<get>> <<set>>
+    + Status : string <<get>> <<set>>
+    + SpecialRequests : string <<get>> <<set>>
+}
+class "List`1"<T> {
+}
+Order --> "CreatedAt" DateTime
+Order --> "UpdatedAt" DateTime
+Order o-> "OrderDishes<OrderDish>" "List`1"
+@enduml

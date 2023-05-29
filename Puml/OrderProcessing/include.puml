@@ -1,0 +1,17 @@
+@startuml
+!include .\\Controllers\OrderProcessingController.puml
+!include .\\Models\DatabaseContext.puml
+!include .\\Models\Dish.puml
+!include .\\Models\Order.puml
+!include .\\Models\OrderDish.puml
+!include .\\Repositories\DishRepository.puml
+!include .\\Repositories\IDishRepository.puml
+!include .\\Repositories\IOrderDishRepository.puml
+!include .\\Repositories\IOrderRepository.puml
+!include .\\Repositories\OrderDishRepository.puml
+!include .\\Repositories\OrderRepository.puml
+!include .\\Requests\CreateDishRequest.puml
+!include .\\Requests\CreateOrderRequest.puml
+!include .\\Requests\OrderDishRequest.puml
+!include .\\Services\OrderProcessingService.puml
+@enduml

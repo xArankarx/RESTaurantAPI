@@ -1,0 +1,14 @@
+@startuml
+!include .\\Controllers\AuthorizationController.puml
+!include .\\Models\DatabaseContext.puml
+!include .\\Models\JwtSettings.puml
+!include .\\Models\Session.puml
+!include .\\Models\User.puml
+!include .\\Repositories\ISessionRepository.puml
+!include .\\Repositories\IUserRepository.puml
+!include .\\Repositories\SessionRepository.puml
+!include .\\Repositories\UserRepository.puml
+!include .\\Requests\LoginRequest.puml
+!include .\\Requests\RegistrationRequest.puml
+!include .\\Services\AuthorizationService.puml
+@enduml

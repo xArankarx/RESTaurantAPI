@@ -1,0 +1,8 @@
+@startuml
+interface IOrderDishRepository {
+    CreateOrderDish(orderDish:OrderDish) : Task
+    DeleteOrderDish(orderDish:OrderDish) : Task
+    GetOrderDishesByOrderId(orderId:int) : Task<IEnumerable<OrderDish>>
+    GetOrderDishesByDishId(dishId:int) : Task<IEnumerable<OrderDish>>
+}
+@enduml

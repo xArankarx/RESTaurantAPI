@@ -1,0 +1,11 @@
+@startuml
+class UserRepository {
+    + UserRepository(dbContext:DatabaseContext)
+    + <<async>> GetUserById(id:int) : Task<User?>
+    + <<async>> GetUserByEmail(email:string) : Task<User?>
+    + <<async>> GetUserByUsername(username:string) : Task<User?>
+    + <<async>> CreateUser(user:User) : Task
+}
+IUserRepository <|-- UserRepository
+UserRepository --> "_dbContext" DatabaseContext
+@enduml

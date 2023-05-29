@@ -1,0 +1,8 @@
+@startuml
+class CreateDishRequest <<record>> {
+    + Name : string <<get>> <<init>>
+    + Description : string <<get>> <<init>>
+    + Price : decimal <<get>> <<init>>
+    + Quantity : int <<get>> <<init>>
+}
+@enduml

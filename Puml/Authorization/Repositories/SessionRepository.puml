@@ -1,0 +1,9 @@
+@startuml
+class SessionRepository {
+    + SessionRepository(dbContext:DatabaseContext)
+    + <<async>> GetSessionByToken(token:string) : Task<Session?>
+    + <<async>> CreateSession(session:Session) : Task
+}
+ISessionRepository <|-- SessionRepository
+SessionRepository --> "_dbContext" DatabaseContext
+@enduml

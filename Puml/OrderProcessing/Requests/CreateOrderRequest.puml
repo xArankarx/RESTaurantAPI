@@ -1,0 +1,10 @@
+@startuml
+class CreateOrderRequest <<record>> {
+    + UserId : int <<get>> <<init>>
+    + Status : string <<get>> = "Pending"
+    + SpecialRequests : string <<get>> <<init>>
+}
+class "List`1"<T> {
+}
+CreateOrderRequest --> "OrderDishes<OrderDishRequest>" "List`1"
+@enduml

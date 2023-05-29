@@ -1,0 +1,8 @@
+@startuml
+class RegistrationRequest <<record>> {
+    + Username : string <<get>> <<init>>
+    + Email : string <<get>> <<init>>
+    + Password : string <<get>> <<init>>
+    + Role : string <<get>> <<init>>
+}
+@enduml

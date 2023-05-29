@@ -1,0 +1,13 @@
+@startuml
+class DatabaseContext {
+    + DatabaseContext(configuration:IConfiguration)
+    # <<override>> OnConfiguring(optionsBuilder:DbContextOptionsBuilder) : void
+}
+class "DbSet`1"<T> {
+}
+DbContext <|-- DatabaseContext
+DatabaseContext --> "_configuration" IConfiguration
+DatabaseContext --> "dish<Dish>" "DbSet`1"
+DatabaseContext --> "order<Order>" "DbSet`2"
+DatabaseContext --> "order_dish<OrderDish>" "DbSet`3"
+@enduml

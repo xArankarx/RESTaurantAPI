@@ -1,0 +1,12 @@
+@startuml
+class DatabaseContext {
+    + DatabaseContext(configuration:IConfiguration)
+    # <<override>> OnConfiguring(optionsBuilder:DbContextOptionsBuilder) : void
+}
+class "DbSet`1"<T> {
+}
+DbContext <|-- DatabaseContext
+DatabaseContext --> "_configuration" IConfiguration
+DatabaseContext --> "user<User>" "DbSet`1"
+DatabaseContext --> "session<Session>" "DbSet`2"
+@enduml

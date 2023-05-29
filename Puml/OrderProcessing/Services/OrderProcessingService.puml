@@ -1,0 +1,25 @@
+@startuml
+class OrderProcessingService {
+    + OrderProcessingService(orderRepository:IOrderRepository, orderDishRepository:IOrderDishRepository, dishRepository:IDishRepository)
+    + <<async>> CreateOrder(request:CreateOrderRequest) : Task<Order>
+    + <<async>> UpdateOrderStatus(id:int, status:string) : Task<Order>
+    + <<async>> GetOrderById(id:int) : Task<Order>
+    + <<async>> GetAllOrders() : Task<IEnumerable<Order>>
+    + <<async>> GetOrdersByUserId(userId:int) : Task<IEnumerable<Order>>
+    + <<async>> GetOrdersByStatus(status:string) : Task<IEnumerable<Order>>
+    + <<async>> ProcessOrders() : Task
+    + <<async>> CreateDish(request:CreateDishRequest) : Task<Dish>
+    + <<async>> UpdateDish(id:int, request:CreateDishRequest) : Task<Dish>
+    + <<async>> DeleteDish(id:int) : Task
+    + <<async>> GetDishById(id:int) : Task<Dish>
+    + <<async>> GetAllDishes() : Task<IEnumerable<Dish>>
+    + <<async>> GetDishesByName(name:string) : Task<IEnumerable<Dish>>
+    + <<async>> GetDishesByAvailability(available:bool) : Task<IEnumerable<Dish>>
+    - <<async>> GetOrderDishesByOrderId(orderId:int) : Task<IEnumerable<OrderDish>>
+    - <<async>> GetOrderDishesByDishId(dishId:int) : Task<IEnumerable<OrderDish>>
+    - {static} VerifyStatus(status:string) : bool
+}
+OrderProcessingService --> "_orderRepository" IOrderRepository
+OrderProcessingService --> "_orderDishRepository" IOrderDishRepository
+OrderProcessingService --> "_dishRepository" IDishRepository
+@enduml

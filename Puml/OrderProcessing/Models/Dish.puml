@@ -1,0 +1,11 @@
+@startuml
+class Dish <<record>> {
+    + Id : int <<get>> <<set>>
+    + Name : string <<get>> <<set>>
+    + Description : string <<get>> <<set>>
+    + Price : decimal <<get>> <<set>>
+    + Quantity : int <<get>> <<set>>
+}
+Dish --> "CreatedAt" DateTime
+Dish --> "UpdatedAt" DateTime
+@enduml

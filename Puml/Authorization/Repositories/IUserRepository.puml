@@ -1,0 +1,8 @@
+@startuml
+interface IUserRepository {
+    GetUserById(id:int) : Task<User?>
+    GetUserByEmail(email:string) : Task<User?>
+    GetUserByUsername(username:string) : Task<User?>
+    CreateUser(user:User) : Task
+}
+@enduml

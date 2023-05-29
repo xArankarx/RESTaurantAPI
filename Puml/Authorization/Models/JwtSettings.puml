@@ -1,0 +1,8 @@
+@startuml
+class JwtSettings <<record>> {
+    + Key : string <<get>> <<set>>
+    + Issuer : string <<get>> <<set>>
+    + Audience : string <<get>> <<set>>
+    + ExpireDays : int <<get>> <<set>>
+}
+@enduml

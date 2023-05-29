@@ -1,0 +1,6 @@
+@startuml
+class OrderDishRequest <<record>> {
+    + DishId : int <<get>> <<init>>
+    + Quantity : int <<get>> <<init>>
+}
+@enduml

@@ -1,0 +1,16 @@
+@startuml
+class AuthorizationService {
+    + AuthorizationService(userRepository:IUserRepository, sessionRepository:ISessionRepository, configuration:IConfiguration)
+    + <<async>> RegisterUser(request:RegistrationRequest) : Task<User>
+    + <<async>> Login(request:LoginRequest) : Task<string>
+    + <<async>> GetUserByToken(token:string) : Task<User>
+    + <<async>> GetUserById(id:int) : Task<User>
+    - {static} HashPassword(password:string) : string
+    - {static} VerifyPassword(password:string, passwordHash:string) : bool
+    - {static} VerifyRole(role:string) : bool
+    - GenerateJwtToken(user:User) : string
+}
+AuthorizationService --> "_userRepository" IUserRepository
+AuthorizationService --> "_sessionRepository" ISessionRepository
+AuthorizationService o-> "_jwtSettings" JwtSettings
+@enduml

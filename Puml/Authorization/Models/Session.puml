@@ -1,0 +1,8 @@
+@startuml
+class Session <<record>> {
+    + Id : int <<get>> <<set>>
+    + UserId : int <<get>> <<set>>
+    + SessionToken : string <<get>> <<set>>
+}
+Session --> "ExpiresAt" DateTime
+@enduml

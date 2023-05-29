@@ -1,0 +1,14 @@
+@startuml
+class DishRepository {
+    + DishRepository(dbContext:DatabaseContext)
+    + <<async>> GetDishById(id:int) : Task<Dish?>
+    + <<async>> CreateDish(dish:Dish) : Task
+    + <<async>> UpdateDish(dish:Dish) : Task
+    + <<async>> DeleteDish(dish:Dish) : Task
+    + <<async>> GetAllDishes() : Task<IEnumerable<Dish>>
+    + <<async>> GetDishesByName(name:string) : Task<IEnumerable<Dish>>
+    + <<async>> GetDishesByAvailability(isAvailable:bool) : Task<IEnumerable<Dish>>
+}
+IDishRepository <|-- DishRepository
+DishRepository --> "_dbContext" DatabaseContext
+@enduml

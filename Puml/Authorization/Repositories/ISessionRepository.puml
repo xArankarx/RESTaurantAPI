@@ -1,0 +1,6 @@
+@startuml
+interface ISessionRepository {
+    GetSessionByToken(token:string) : Task<Session?>
+    CreateSession(session:Session) : Task
+}
+@enduml

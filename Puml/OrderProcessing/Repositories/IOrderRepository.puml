@@ -1,0 +1,12 @@
+@startuml
+interface IOrderRepository {
+    GetOrderById(id:int) : Task<Order?>
+    CreateOrder(order:Order) : Task
+    UpdateOrder(order:Order) : Task
+    DeleteOrder(order:Order) : Task
+    ProcessOrder(order:Order) : Task
+    GetAllOrders() : Task<IEnumerable<Order>>
+    GetOrdersByUserId(userId:int) : Task<IEnumerable<Order>>
+    GetOrdersByStatus(status:string) : Task<IEnumerable<Order>>
+}
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+interface IDishRepository {
+    GetDishById(id:int) : Task<Dish?>
+    CreateDish(dish:Dish) : Task
+    UpdateDish(dish:Dish) : Task
+    DeleteDish(dish:Dish) : Task
+    GetAllDishes() : Task<IEnumerable<Dish>>
+    GetDishesByName(name:string) : Task<IEnumerable<Dish>>
+    GetDishesByAvailability(isAvailable:bool) : Task<IEnumerable<Dish>>
+}
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class OrderDishRepository {
+    + OrderDishRepository(dbContext:DatabaseContext)
+    + <<async>> CreateOrderDish(orderDish:OrderDish) : Task
+    + <<async>> DeleteOrderDish(orderDish:OrderDish) : Task
+    + <<async>> GetOrderDishesByOrderId(orderId:int) : Task<IEnumerable<OrderDish>>
+    + <<async>> GetOrderDishesByDishId(dishId:int) : Task<IEnumerable<OrderDish>>
+}
+IOrderDishRepository <|-- OrderDishRepository
+OrderDishRepository --> "_dbContext" DatabaseContext
+@enduml

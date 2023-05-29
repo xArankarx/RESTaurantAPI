@@ -1,0 +1,21 @@
+@startuml
+class OrderProcessingController {
+    + OrderProcessingController(orderProcessingService:OrderProcessingService)
+    + <<async>> CreateOrder(request:CreateOrderRequest) : Task<IActionResult>
+    + <<async>> UpdateOrderStatus(role:string, id:int, status:string) : Task<IActionResult>
+    + <<async>> ProcessOrders() : Task<IActionResult>
+    + <<async>> GetOrderById(id:int) : Task<IActionResult>
+    + <<async>> GetAllOrders() : Task<IActionResult>
+    + <<async>> GetOrdersByUserId(userId:int) : Task<IActionResult>
+    + <<async>> GetOrdersByStatus(status:string) : Task<IActionResult>
+    + <<async>> CreateDish(role:string, request:CreateDishRequest) : Task<IActionResult>
+    + <<async>> UpdateDish(role:string, id:int, request:CreateDishRequest) : Task<IActionResult>
+    + <<async>> DeleteDish(role:string, id:int) : Task<IActionResult>
+    + <<async>> GetDishById(id:int) : Task<IActionResult>
+    + <<async>> GetAllDishes() : Task<IActionResult>
+    + <<async>> GetDishesByName(name:string) : Task<IActionResult>
+    + <<async>> GetAvailableDishes() : Task<IActionResult>
+}
+ControllerBase <|-- OrderProcessingController
+OrderProcessingController --> "_orderProcessingService" OrderProcessingService
+@enduml

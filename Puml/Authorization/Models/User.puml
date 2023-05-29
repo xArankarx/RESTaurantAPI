@@ -1,0 +1,11 @@
+@startuml
+class User <<record>> {
+    + Id : int <<get>> <<set>>
+    + Username : string <<get>> <<set>>
+    + Email : string <<get>> <<set>>
+    + PasswordHash : string <<get>> <<set>>
+    + Role : string <<get>> <<set>>
+}
+User --> "CreatedAt" DateTime
+User --> "UpdatedAt" DateTime
+@enduml

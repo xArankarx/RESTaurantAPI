@@ -1,0 +1,16 @@
+@startuml
+class OrderRepository {
+    + OrderRepository(dbContext:DatabaseContext)
+    + <<async>> GetOrderById(id:int) : Task<Order?>
+    + <<async>> CreateOrder(order:Order) : Task
+    + <<async>> UpdateOrder(order:Order) : Task
+    + <<async>> DeleteOrder(order:Order) : Task
+    + <<async>> ProcessOrder(order:Order) : Task
+    + <<async>> GetAllOrders() : Task<IEnumerable<Order>>
+    + <<async>> GetOrdersByUserId(userId:int) : Task<IEnumerable<Order>>
+    + <<async>> GetOrdersByStatus(status:string) : Task<IEnumerable<Order>>
+}
+IOrderRepository <|-- OrderRepository
+OrderRepository --> "_dbContext" DatabaseContext
+OrderRepository o-> "_semaphore" SemaphoreSlim
+@enduml

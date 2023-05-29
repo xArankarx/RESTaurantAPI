@@ -1,0 +1,9 @@
+@startuml
+class OrderDish <<record>> {
+    + Id : int <<get>> <<set>>
+    + OrderId : int <<get>> <<set>>
+    + DishId : int <<get>> <<set>>
+    + Quantity : int <<get>> <<set>>
+    + Price : decimal <<get>> <<set>>
+}
+@enduml
